@@ -6,6 +6,14 @@ spec:
     containers:
     - image: hiteshkotian/surface-app:v1
       name: surface-app
+      livenessProbe:
+          httpGet:
+              path: /graph
+              port: 8000
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          periodSeconds: 10
+          failureThreshold: 3
       ports:
           - containerPort: 8000
             name: http
