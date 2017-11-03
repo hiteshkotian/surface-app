@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: surface-pod
+spec:
+    containers:
+    - image: hiteshkotian/surface-app:v1
+      name: surface-app
+      ports:
+          - containerPort: 8000
+            name: http
+            protocol: TCP
